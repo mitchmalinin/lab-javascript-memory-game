@@ -26,7 +26,7 @@ var cards = [
 ];
 var memoryGame = new MemoryGame(cards);
 
-// memoryGame.shuffleCards();
+memoryGame.shuffleCards();
 
 document.addEventListener('DOMContentLoaded', function(event) {
 	var html = '';
@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 				setTimeout(() => {
 					if (memoryGame.finalArray.length === 12) {
 						alert('YOU WON THE GAME!');
-						$('#memory_board').css('display', 'none');
-						memoryGame = new MemoryGame(cards);
+						location.reload();
+						memoryGame.shuffleCards();
 					}
 				}, 1000);
 				$('.back').removeClass('blocked');
